@@ -1,0 +1,23 @@
+Package: FARS
+Type: Package
+Title: FARS Package - Coursera Course
+Version: 0.1.0
+Author: LR
+Maintainer: Do not use: <123456@somewhere.net>
+Description: This package is my first attempt on writing a package in R. It was
+    created for the Coursera Course on Creating Packages in R. I recommend not to
+    use it.
+License: GPL
+Imports:
+    dplyr,
+    tidyr,
+    readr,
+    maps
+Depends:
+    R (>= 3.1.0)
+LazyData: TRUE
+RoxygenNote: 5.0.1
+Suggests: knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr

@@ -1,0 +1,15 @@
+---
+title: "Description of my FARS - Package"
+author: "LR"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This package is the first package I made. It was done during the Coursera Course on "Package Developement in R".
+Hence the main purpose of the package is to learn how to create a package. Hence the included function are not
+that useful for somebody else and I recommend not to use them.
+
