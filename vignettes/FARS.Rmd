@@ -9,7 +9,30 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-This package is the first package I made. It was done during the Coursera Course on "Package Developement in R".
-Hence the main purpose of the package is to learn how to create a package. Hence the included function are not
-that useful for somebody else and I recommend not to use them.
+This package was written for the Week 4 final assignment for the "Building R Packages" course on Coursera, as part of the Johns Hopkins University "Mastering Software Development in R" specialization.
+
+The functions provided in this assignment will be using data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System, which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes. 
+The data in this package come from the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS) data. It lists the fatal vehicle crashes in the United States for each year; each crash observation can has as many as 50 features.
+
+Note that this package contains data from the years 2013-2015: 2013-2015.
+
+
+This package only contains a few functions, which we will describe in the following.  
+
+
+If you want to create the name of the FARS data for a specific year, e.g. 2013, you should use the following command:
+fars_filename <- make_filename(2013)
+
+Given a valid filename you can use the following command to read the fatalities:
+fars_2013 <- fars_read_years(years = 2013)
+
+To Summarize data use the fars_summarize_years() function:
+fars_summary <- fars_summarize_years(2013:2015)
+
+Finally, for a given state ID number and a year, the following function plots a map of the state where are the fatalities are 
+marked:
+
+library(mapdata)
+fars_map_state(53, 2014)
+
 

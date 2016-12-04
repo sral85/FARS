@@ -17,6 +17,5 @@ Reads the month and year columns of multiple fars-data files and returns it as a
 }
 \examples{
 \dontrun{fars_read_years(c(2013,2014))}
-\dontrun{add(10, 1)}
 }
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fars_functions.R
 \name{fars_summarize_years}
 \alias{fars_summarize_years}
-\title{Add together two numbers}
+\title{Summarize fars data.}
 \usage{
 fars_summarize_years(years)
 }
@@ -13,7 +13,7 @@ fars_summarize_years(years)
 A data.frame giving the counts of the present elements for each month by year.
 }
 \description{
-Add together two numbers
+Summarize fars data.
 }
 \examples{
 \dontrun{fars_summarize_years(c(2013,2014))}
