@@ -1,6 +1,5 @@
 ---
-title: "Description of my FARS - Package"
-author: "LR"
+title: "Description of FARS - Package"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -8,31 +7,45 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+This package was created as a task of the Coursera Coursera "Building R Packages" offered by the John Hopkins University.
 
-This package was written for the Week 4 final assignment for the "Building R Packages" course on Coursera, as part of the Johns Hopkins University "Mastering Software Development in R" specialization.
+The assignment deals with the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS).
+FARS is a nationwide census providing NHTSA, Congress and the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes. Note that the FARS data from the years 2013 to 2015 is included in the package.
+For more details visit: http://www.nhtsa.gov/Data/Fatality-Analysis-Reporting-System-(FARS)
 
-The functions provided in this assignment will be using data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System, which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes. 
-The data in this package come from the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS) data. It lists the fatal vehicle crashes in the United States for each year; each crash observation can has as many as 50 features.
-
-Note that this package contains data from the years 2013-2015: 2013-2015.
-
-
-This package only contains a few functions, which we will describe in the following.  
+In the following we will provide a short description of the functions contained in this package. 
 
 
-If you want to create the name of the FARS data for a specific year, e.g. 2013, you should use the following command:
+###Reading Data
+The `make_filename` provides an easy way to create the filenames of the data provided within this package.
+To create the filename for a specific year, e.g. 2013 use the following command:
+```
 fars_filename <- make_filename(2013)
+```
 
-Given a valid filename you can use the following command to read the fatalities:
+If you created the filename via `make_filename`, you can use the `fars_read`-function to read the data. The following line reads the FARS data for the year 2013
+```
 fars_2013 <- fars_read_years(years = 2013)
+```
+Note that you do not need to unpack the provided files.
 
-To Summarize data use the fars_summarize_years() function:
+If you want to reads the month and year columns of multiple fars-data files and return it in form of a data.frame, use 
+`fars_read_years`:
+```
+fars_2013 <- fars_read_years(years = 2013)
+```
+
+###Manipulating Data
+
+Typically one is interested in the number of fatal crashes per year and month. Herefore, `fars_summarize` is provided. 
+```
 fars_summary <- fars_summarize_years(2013:2015)
+```
 
-Finally, for a given state ID number and a year, the following function plots a map of the state where are the fatalities are 
-marked:
-
+###Visualizing Data
+This package is also equiped with a function which visualizes the locations of the fatal crashes. Call the function `fars_map_state` with a state ID number and year to get a plot map where the locations are shwon.
+```
 library(mapdata)
-fars_map_state(53, 2014)
-
+fars_map_state(10, 2013)
+```
 
